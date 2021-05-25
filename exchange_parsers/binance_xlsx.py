@@ -31,7 +31,7 @@ class BinanceXlsxParser(DocumentParser):
     def process_date(self, row):
         _date = row['created_at']
         if isinstance(_date, str):
-            return datetime.strptime(_date, '%Y-%m-%d %H:%M:%S')
+            return datetime.strptime(_date, '%d-%m-%Y %H:%M:%S')
         if isinstance(_date, date):
             return datetime(_date.year, _date.month, _date.day)
         else:

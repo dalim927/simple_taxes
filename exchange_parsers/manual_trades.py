@@ -30,9 +30,9 @@ class ManualTradesParser(DocumentParser):
         _date = row['created_at']
         if isinstance(_date, str):
             try:
-                return datetime.strptime(_date, '%m/%d/%Y %H:%M:%S')
+                return datetime.strptime(_date, '%d/%m/%Y %H:%M:%S')
             except:
-                return datetime.strptime(_date, '%m/%d/%Y')
+                return datetime.strptime(_date, '%d/%m/%Y')
         if isinstance(_date, date):
             return datetime(_date.year, _date.month, _date.day)
         else:

@@ -19,7 +19,7 @@ class ExchangeRates(object):
     """
     def __init__(self):
         self.path = os.path.join('data', 'exchange_rates.csv')
-        self.api = 'https://api.gdax.com/products/'
+        self.api = 'https://api.pro.coinbase.com/products/'
         self.base_currencies = ['BTC', 'ETH']
 
     def parse_file(self, filename):

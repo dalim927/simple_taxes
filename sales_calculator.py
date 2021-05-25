@@ -85,7 +85,16 @@ class SalesCalculator():
         r_p = 0
         for _ in sales.currency.unique():
             copy = sales[sales['currency'] == _].copy()
-            min_pnl_index = copy.rolling_pnl.idxmin()
+ #           print "copy.currency: ", copy.currency
+ #           print "copy.amount: ", pd.to_numeric(copy.amount)            
+ #           print "copy.rolling_amount: ", copy.rolling_amount
+ #           print "copy.sales: ", copy.sales
+ #           print "copy.rolling_sales: ", copy.rolling_sales
+ #           print "copy.pnl: ", copy.pnl
+ #           print "copy.rolling_pnl: ", copy.rolling_pnl
+ #           print "min_pnl_index: ", pd.to_numeric(copy.rolling_pnl).idxmin()
+
+            min_pnl_index = pd.to_numeric(copy.rolling_pnl).idxmin()
             rolling_sales = round(copy.loc[min_pnl_index].rolling_sales, 0)
             rolling_amount = round(copy.loc[min_pnl_index].rolling_amount, 2)
             rolling_pnl = round(copy.loc[min_pnl_index].rolling_pnl, 0)

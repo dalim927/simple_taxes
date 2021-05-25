@@ -98,7 +98,7 @@ class DocumentParser(object):
         return arg
 
     def open_csv(self, filename):
-        with open(filename, 'r') as f:
+        with open(filename, 'rU') as f:
             return self.csv_parser(self.skip_headers(f))
 
     def skip_headers(self, f_obj):
