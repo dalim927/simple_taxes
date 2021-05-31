@@ -3,7 +3,7 @@ import time
 from decimal import Decimal
 
 
-CMC_API_KEY = None
+CMC_API_KEY = '0a5af222-11d2-44d0-8682-d769eba1d73e'
 
 class ExchangeRates():
     def __init__(self):
